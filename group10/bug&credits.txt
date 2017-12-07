@@ -1,0 +1,51 @@
+bug[1]: Order in function swap is wrong, leading to the wrong sorting.The result will always be wrong.
+
+for example:
+   rand_int.txt  -->  dec_int.txt
+   abc=148            bac=234
+   bac=234            ghi=9
+   ghi=9
+
+correct output should be:
+  dec_int.txt
+   bac=234
+   abc=148  
+   ghi=9
+
+*credits to be won: 2 credits
+
+--------------------------------------------------------------
+bug[2]:Wrong size for memory allocation in function fill_dll().
+       When input is in a large size, the code will crash.
+
+for example:
+   rand_int.txt  --------------> crash:invalid size
+   abc=1486372848599697890            
+   bac=2342153656788645352            
+   ghi=9
+
+correct output should be:
+  dec_int.txt
+   bac=1917122024
+   abc=21089378 
+   ghi=9
+
+*credits to be won: 3 credits
+
+------------------------------------------------------------------
+bug[3]:Not specified separators for parsing string.
+       Whatever input will result 0 as output.
+
+ rand_int.txt  -->  dec_int.txt
+   abc=148            abc=0
+   bac=234            bac=0
+   ghi=9              ghi=0 
+
+correct output should be:
+  dec_int.txt
+   bac=234
+   abc=148  
+   ghi=9
+
+*credits to be won: 5 credits
+

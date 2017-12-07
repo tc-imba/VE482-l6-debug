@@ -1,0 +1,2 @@
+two bugs (2+3 credits) in lab6bug.c
+two bugs (2+3 credits) in lab6/

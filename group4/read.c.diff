@@ -1,0 +1,6 @@
+47a48
+> 			if (t[strlen(t)-1]=='\n') t[strlen(t)-1]='\0';
+50c51
+< 			a=(char*)malloc(strlen(t)*sizeof(char));
+---
+> 			a=(char*)malloc((strlen(t)+1)*sizeof(char));

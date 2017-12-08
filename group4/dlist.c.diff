@@ -1,0 +1,29 @@
+22c22
+<         ((list*)this)->last = newnode;
+---
+>         ((list*)this)->first = ((list*)this)->last = newnode;
+29a30
+>         ((list*)this)->last->next = newnode;
+130a132,135
+> 	else if(del->prev==NULL && del->next==NULL)
+> 	{
+> 		dlist->first=dlist->last=NULL;
+> 	}
+149a155
+> 				str = cursor->str;
+164a171
+> 				str = cursor->str;
+179a187
+> 				str = cursor->str;
+199a208
+> 				str = cursor->str;
+214a224
+> 				str = cursor->str;
+229a240
+> 				str = cursor->str;
+249a261
+> 				str = cursor->str;
+264a277
+> 				str = cursor->str;
+279a293
+> 				str = cursor->str;

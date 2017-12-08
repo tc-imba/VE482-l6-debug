@@ -1,0 +1,4 @@
+12c12
+<         for (node *p = head; p->next != NULL; p = p->next)
+---
+>         for (node *p = head; p != NULL; p = p->next)

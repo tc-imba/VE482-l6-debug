@@ -1,0 +1,17 @@
+44c44,52
+< 		dlistAppend(listDst, p->op, p->value);
+---
+>     {
+>         dlistValue value = p->value;
+>         if (CAST(this, vector *)->type == DLIST_STR)
+>         {
+>             value.strValue = malloc(strlen(p->value.strValue) + 1);
+>             strcpy(value.strValue, p->value.strValue);
+>         }
+>         dlistAppend(listDst, p->op, value);
+>     }
+78c86,87
+< 		free(victim->value.strValue);
+---
+>         if (CAST(this, vector *)->type == DLIST_STR)
+>             free(victim->value.strValue);

@@ -1,0 +1,9 @@
+6c6
+<     int fout = open(outfile, O_TRUNC | O_WRONLY);
+---
+>     int fout = open(outfile, O_TRUNC | O_WRONLY | O_CREAT, 0644);
+35,36c35
+<                 strval = strtok(NULL, "= \t\a\r\n");
+<                 value.strValue = malloc(sizeof(char) * (strlen(tmp_line) + 1));
+---
+>                 value.strValue = malloc(sizeof(char) * (strlen(strval) + 1));

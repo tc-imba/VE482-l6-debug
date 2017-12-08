@@ -42,7 +42,7 @@ int dlistIsEmpty(dlist_const this) {
 void dlistAppend(dlist this, const char* key, dlistValue value) {
     // REQUIRES: type instantiated in ' value ' corresponds to the datatype in the list
     //
-    // EFFECTS : add a line of form ”key=value�?to the tail of the dlist
+    // EFFECTS : add a line of form ”key=value�?to the tail of the dlist
     // MODIFIES: modifies ' this ' .
     struct linkedList* list = (struct linkedList*)this;
     struct node* tnode = (struct node*)malloc(sizeof(struct node));

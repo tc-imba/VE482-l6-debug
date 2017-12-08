@@ -1,0 +1,18 @@
+95c95,96
+< 	  addednode->key = tnode->key;
+---
+>         addednode->key = malloc(strlen(tnode->key) + 1);
+>         strcpy(addednode->key, tnode->key);
+96a98,101
+>         if (list->type == DLIST_STR) {
+>             addednode->value.dlistValue = malloc(strlen(tnode->value.dlistValue) + 1);
+>             strcpy(addednode->value.dlistValue, tnode->value.dlistValue);
+>         }
+191a197,199
+>             if (list->type == DLIST_STR) {
+>                 free(list->head->value.dlistValue);
+>             }
+196a205,207
+>             if (list->type == DLIST_STR) {
+>                 free(list->head->prev->value.dlistValue);
+>             }

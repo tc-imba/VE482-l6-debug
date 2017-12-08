@@ -15,7 +15,7 @@ dlist createDlist(dlistValueType type)
 //          returns NULL on error
 {
     
-    list *newlist;
+    list *newlist = malloc(sizeof(list));
     newlist->first=NULL;
     newlist->type=type;
     newlist->num=0;

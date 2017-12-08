@@ -1,0 +1,46 @@
+#BUG 1
+96c96
+<                     if (strcmp(current->value.strValue,next->value.strValue)<0 ) {
+---
+>                     if (strcmp(current->value.strValue,next->value.strValue)>0 ) {
+106c106
+<                     if (current->value.doubleValue<next->value.doubleValue) {
+---
+>                     if (current->value.doubleValue>next->value.doubleValue) {
+116c116
+<                     if (current->value.intValue<next->value.intValue) {
+---
+>                     if (current->value.intValue>next->value.intValue) {
+135c135
+<                     if (strcmp(current->value.strValue,next->value.strValue)>0 ) {
+---
+>                     if (strcmp(current->value.strValue,next->value.strValue)<0 ) {
+145c145
+<                     if (current->value.doubleValue>next->value.doubleValue) {
+---
+>                     if (current->value.doubleValue<next->value.doubleValue) {
+155c155
+<                     if (current->value.intValue>next->value.intValue) {
+---
+>                     if (current->value.intValue<next->value.intValue) {
+208,212c208,217
+<         dlistFree(listDst);
+<         listDst=tempList;
+<     }
+<     else {
+<         listDst=tempList;
+---
+>         current=((struct Head*) this)->head;
+>         struct Node* head=current;
+>         while (head!=NULL){
+>             current=current->next;
+>             if (((struct Head*) this)->type==DLIST_STR){
+>                 free(head->value.strValue);
+>             }
+>             free(head);
+>             head=current;
+>         }
+213a219,220
+>     *(struct Head*)listDst = *tempList;
+>     free(tempList);
+ 

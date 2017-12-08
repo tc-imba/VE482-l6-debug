@@ -1,0 +1,15 @@
+131d130
+<     list* temp;
+133c132
+<         temp=sorting(this, inc, method);
+---
+>         listDst=sorting(this, inc, method);
+135,136c134
+<         temp=sorting(this, dec, method);
+<     *listDst = *temp;
+---
+>         listDst=sorting(this, dec, method);
+189c187
+<  
+---
+> 

@@ -1,0 +1,6 @@
+56,57c56,57
+<     y->previous = x;
+<     x->next = y;
+---
+>     y->next = x;
+>     x->previous = y;

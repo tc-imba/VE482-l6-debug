@@ -1,0 +1,24 @@
+#BUG 1 list.c
+56,57c56,57
+<     y->previous = x;
+<     x->next = y;
+---
+>     y->next = x;
+>     x->previous = y;
+
+#BUG 2, 3 logic.c
+45c45
+<     line = (char*)malloc(sizeof(char));
+---
+>     line = (char*)malloc(1025);
+48c48
+<         char* temp = (char *)malloc(sizeof(char));
+---
+>         char* temp = (char *)malloc(strlen(buffer)+1);
+49a50
+>         buffer = strtok(NULL,"=");
+52c53
+<                char* temp2 = (char*)malloc(sizeof(char));
+---
+>                char* temp2 = (char*)malloc(strlen(buffer)+1);
+

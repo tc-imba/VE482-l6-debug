@@ -1,0 +1,16 @@
+65c65
+< 		((list_t*)this)->list_length = 0;
+---
+> 		((list_t*)this)->list_length = 1;
+81c81
+< 	//((list_t*)this)->list_length = ((list_t*)this)->list_length+1;
+---
+> 	((list_t*)this)->list_length = ((list_t*)this)->list_length+1;
+168c168
+< 		char *addchar = (char*)malloc(sizeof(char)*k);
+---
+> 		char *addchar = (char*)malloc(sizeof(char)*(k+1));
+170c170
+< 		memset(addchar,'\0',sizeof(char)*k);
+---
+> 		memset(addchar,'\0',sizeof(char)*(k+1));

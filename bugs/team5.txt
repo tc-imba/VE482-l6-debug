@@ -1,0 +1,36 @@
+#BUG 1 bug1/list.c
+131d130
+<     list* temp;
+133c132
+<         temp=sorting(this, inc, method);
+---
+>         listDst=sorting(this, inc, method);
+135,136c134
+<         temp=sorting(this, dec, method);
+<     *listDst = *temp;
+---
+>         listDst=sorting(this, dec, method);
+189c187
+<  
+---
+> 
+
+#BUG 2 bug2/dlist.c
+18c18
+<     list *newlist;
+---
+>     list *newlist = malloc(sizeof(list));
+
+
+#BUG 3,4 lab6bug.c
+227,229c227,229
+< 				data = (int*)malloc(1024 * sizeof(int));
+< 				data = atoi(data_s);
+< 				insertFront(list, data, string);
+---
+> 				int *data_i = (int*)malloc(1024 * sizeof(int));
+> 				*data_i = atoi(data_s);
+> 				insertFront(list, data_i, string);
+307a308
+> 				current = current->next;
+

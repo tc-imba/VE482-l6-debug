@@ -128,12 +128,10 @@ int dec(dlistValue data_a, dlistValue data_b, int type)
 
 void choosingSort(list* this,list* listDst,dlistSortMethod method)
 {
-    list* temp;
     if (method==DLIST_SORT_INC)
-        temp=sorting(this, inc, method);
+        listDst=sorting(this, inc, method);
     else if(method==DLIST_SORT_DEC)
-        temp=sorting(this, dec, method);
-    *listDst = *temp;
+        listDst=sorting(this, dec, method);
 }
 
 void ListFree(list* Llist)
@@ -186,4 +184,4 @@ void listCopy(const list* old, list* new)
     
     
 
- 
+

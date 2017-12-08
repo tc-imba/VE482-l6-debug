@@ -1,0 +1,33 @@
+# BUG 1 lab4_dlist.c
+95c95,96
+< 	  addednode->key = tnode->key;
+---
+>         addednode->key = malloc(strlen(tnode->key) + 1);
+>         strcpy(addednode->key, tnode->key);
+96a98,101
+>         if (list->type == DLIST_STR) {
+>             addednode->value.dlistValue = malloc(strlen(tnode->value.dlistValue) + 1);
+>             strcpy(addednode->value.dlistValue, tnode->value.dlistValue);
+>         }
+191a197,199
+>             if (list->type == DLIST_STR) {
+>                 free(list->head->value.dlistValue);
+>             }
+196a205,207
+>             if (list->type == DLIST_STR) {
+>                 free(list->head->prev->value.dlistValue);
+>             }
+
+# BUG2 main.c
+43c43
+<         tempkey = token;
+---
+>         strcpy(tempkey, token);
+53c53,57
+<             value.dlistValue = token;
+---
+>             if (token[strlen(token) - 1] == '\n') {
+>                 token[strlen(token) - 1] = '\0';
+>             }
+>             value.dlistValue = malloc(strlen(token) + 1);
+>             strcpy(value.dlistValue, token);

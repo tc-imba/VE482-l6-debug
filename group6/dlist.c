@@ -218,4 +218,3 @@ void dlistFree(dlist this) {
 	free(((list_t*)this));
 }
 
-

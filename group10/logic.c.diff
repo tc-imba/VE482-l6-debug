@@ -1,0 +1,14 @@
+45c45
+<     line = (char*)malloc(sizeof(char));
+---
+>     line = (char*)malloc(1025);
+48c48
+<         char* temp = (char *)malloc(sizeof(char));
+---
+>         char* temp = (char *)malloc(strlen(buffer)+1);
+49a50
+>         buffer = strtok(NULL,"=");
+52c53
+<                char* temp2 = (char*)malloc(sizeof(char));
+---
+>                char* temp2 = (char*)malloc(strlen(buffer)+1);
